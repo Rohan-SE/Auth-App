@@ -6,7 +6,8 @@ import cookieParser from 'cookie-parser';
 import flash from 'connect-flash'
 import session from 'express-session';
 import dotenv from 'dotenv'
-import path from 'path'
+import path from 'path';
+const __dirname = path.resolve();
 
 dotenv.config()
 

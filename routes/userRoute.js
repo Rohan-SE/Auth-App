@@ -4,6 +4,8 @@ import auth from '../middlewares/isAuth.js'
 const router = express.Router()
 
 router.get('/signup',userController.userRegPage)
+
+router.get('/',userController.userRegPage)
 router.post('/signupPost',userController.userReg)
 router.get('/home',auth.authJWT,userController.welcomePage)
 router.get('/login',auth.checkUserIsLogged,userController.userLogPage)

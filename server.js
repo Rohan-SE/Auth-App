@@ -25,7 +25,6 @@ app.use(session({
 app.use(flash())
 app.use(router)
 const port = 7000
-const host = '0.0.0.0'
-dbconn().then(()=>{app.listen(port,host,()=>{
+dbconn().then(()=>{app.listen(port,()=>{
    
 })})

@@ -6,11 +6,12 @@ import cookieParser from 'cookie-parser';
 import flash from 'connect-flash'
 import session from 'express-session';
 import dotenv from 'dotenv'
+import path from 'path'
 
 dotenv.config()
 
 const app = express()
-app.set('views', __dirname + './views');
+app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 app.use(cors())
 app.use(express.json())

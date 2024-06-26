@@ -17,9 +17,13 @@ const authJWT = (req,res,next)=>{
 }
 const checkUserIsLogged = (req,res,next)=>{
     const token = req.cookies.token
-    if(token ==="") next()
-    else{
-        return res.redirect('/home')
+    if(token){
+        jwt.verify(token,process.env.SECRET,(err,user)=>{
+            if(err) return next()
+            return res.redirect('/home');
+        })
+    }else{
+        next()
     }
 }
 

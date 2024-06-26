@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sign up</title>
+</head>
+<body>
+    <% if(error.length>0) { %>
+        <div class="absolute text-white bg-red-700 p-4 left-1/3 text-2xl w-96 text-center">
+            <%= error %>
+        </div>
+    <% } %>
+    <div class="w-full min-h-screen bg-zinc-900 flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center p-4 w-96 h-96 bg-transparent border border-zinc-400 rounded-md text-white">
+            <h1 class="text-3xl mb-4">Sign Up</h1>
+            <form action="/signupPost" method="post" class="flex flex-col justify-center items-center">
+                <input class="px-3 py-2 mb-4 bg-transparent border-2 border-zinc-400 rounded-md outline-none" type="text" name="name" placeholder="Enter your name">
+                <input class="px-3 py-2 mb-4 bg-transparent border-2 border-zinc-400 rounded-md outline-none" type="text" name="email" placeholder="Enter your email">
+                <input class="px-3 py-2 mb-4 bg-transparent border-2 border-zinc-400 rounded-md outline-none" type="password" name="password" placeholder="Enter your password">
+             <div>
+                <select class="px-3 py-2 mb-4 bg-transparent hover:bg-zinc-900 border-2 border-zinc-400 rounded-md outline-none" name="gender" id="">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                </select>
+                <input class="ml-2 px-3 py-2 mb-4 bg-transparent border-2 border-zinc-400 rounded-md w-24 outline-none" type="text" name="age" placeholder="Age">
+             </div>
+                <input class="bg-zinc-950 mb-2 cursor-pointer px-8 py-2 rounded-md border-2 border-zinc-800" type="submit" value="Sign Up">
+                <a href="/login">Already have an account?</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

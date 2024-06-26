@@ -42,7 +42,7 @@ const userReg = async(req,res)=>{
 }
 
 const userRegPage = (req,res)=>{
-        res.render('../views/welcome',{error:req.flash('error')})
+        res.render('signup',{error:req.flash('error')})
 
     
 }
